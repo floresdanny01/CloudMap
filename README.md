@@ -9,7 +9,7 @@
   <p align="center">
     The map for all your needs!
     <br />
-    <a href="https://www.google.com/"><strong>View the website »</strong></a>
+    <a href="https://floresdanny01.github.io/CloudMap/"><strong>View the website »</strong></a>
  
 </div>
 
