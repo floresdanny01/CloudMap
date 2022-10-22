@@ -29,3 +29,20 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+The goal of the project is to create a web application that displays a google maps page with custom filters provided by the user which changes which locations are displayed on screen. Examples would be setting up markers for currently open restaurants or locations to visit. Maps with custom markers by users can be shared with other users via links. 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Built With
+
+Libraries and tools used to build this project
+
+* [Google Cloud](https://cloud.google.com/)
+* [Java Script](https://www.javascript.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
