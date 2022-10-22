@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="https://github.com/floresdanny01/CloudMap/blob/main/img/cloudmap.png" alt="Logo" width="200" height="200">
+    <img src="https://github.com/Cerick826/CloudMap/blob/main/images/cloudmap.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">CloudMap</h3>
