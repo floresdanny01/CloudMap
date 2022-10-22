@@ -22,10 +22,31 @@
         <a href="#">Thing</a>
         <a href="#">About</a>
       </div>
+      
+      <input
+      id="searchbar"
+      class="controls"
+      type="text"
+      placeholder="Enter a Location"
+    />
+    <div class = "flex-container">
+        <div id="map"></div> 
+        <script src="script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPBBOmQ0WEBEIEgtJtNf_uy3pFQpvxng&map_ids=40c13ed31879d9c7&libraries=places&callback=initMap" async defer></script>
+    
+        <div class = "sidenavR">
+            <h1>Filters</h1>
+            <form>
+                <input type="checkbox" id="tafficBox" name="filters" value ="traffic">
+                <label for = "trafficBox"> Traffic</label><br>
+                <input type="checkbox" id="restaurantBox" name="filters" value ="Restaurant">
+                <label for = "restaurantBox"> Restaurant</label><br>
+                <input type="checkbox" id="parksBox" name="filters" value ="Park">
+                <label for = "parksBox"> Park</label><br>
+            </form>                   
+        </div>
+    </div>
 
-    <div id="map"></div> 
-    <script src="script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPBBOmQ0WEBEIEgtJtNf_uy3pFQpvxng&map_ids=40c13ed31879d9c7&callback=initMap"></script>
 
 </body>
 </html>
