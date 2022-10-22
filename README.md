@@ -70,3 +70,13 @@ Project Link: [https://github.com/floresdanny01/CloudMap](https://github.com/flo
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+The creators of CloudMap:
+
+* [Daniel Flores](https://github.com/floresdanny01)
+* [Erick Contreras](https://github.com/Cerick826)
+* [Breighton Kohl]
+* [Charles Gale]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
