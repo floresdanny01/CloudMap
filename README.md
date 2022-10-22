@@ -55,8 +55,8 @@ Libraries and tools used to build this project
 - [x] Set up work environment for all of the team
 - [x] Begin Coding and implementing features 
 - [x] Continue work on code and begin working on presentation
-- [] Continue implementation
-- [] Continue implementation, begin testing and debugging 
+- [ ] Continue implementation
+- [ ] Continue implementation, begin testing and debugging 
 
 
 See the [open issues](https://github.com/floresdanny01/CloudMap/issues) for a full list of proposed features (and known issues).
