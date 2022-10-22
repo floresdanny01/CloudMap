@@ -65,7 +65,8 @@ See the [open issues](https://github.com/floresdanny01/CloudMap/issues) for a fu
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/floresdanny01/CloudMap](https://github.com/floresdanny01/CloudMap)
+Project Link: [https://github.com/floresdanny01/CloudMap](https://github.com/floresdanny01/CloudMap) </p>
+Repo Owner: Flores.Danny@csu.fullerton.edu
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
