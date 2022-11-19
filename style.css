@@ -1,24 +1,26 @@
-html{
-    box-sizing: border-box;
-    font-size: 100%;
+html {
+  box-sizing: border-box;
+  font-size: 100%;
 }
 
-*,*::before, *::after{
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-body{
-    margin: 0;  
-    padding: 0;
-    background-color: rgb(239, 100, 91);
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(239, 100, 91);
 }
 
-h1{
-    font-family: 'Roboto Slab', serif;
-    text-align: center;
+h1 {
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
 }
 
-/* Search Bar features */ 
+/* Search Bar features */
 .pac-card {
   background-color: #fff;
   border: 0;
@@ -53,10 +55,10 @@ h1{
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
-  margin-left: 800px;
+  margin-left: 0px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 400px;
+  width: 600px;
 }
 
 #searchbar:focus {
@@ -80,67 +82,87 @@ h1{
 
 /* The sidebar menu */
 .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #003049; /* Navy */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-  }
-  
-  /* The navigation menu links */
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-family: 'Roboto Slab', serif;
-    font-size: 25px;
-    color: #a7a7a7;
-    display: block;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Style page content */
-  .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  width: 160px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #003049;
+  /* Navy */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-family: 'Roboto Slab', serif;
+  font-size: 25px;
+  color: #a7a7a7;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
 
-#map{
-    height: 85vh;
-    width: 125vh;
-    margin-left: 45vh;    
-    padding: 10%;
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+#map {
+  height: 85vh;
+  width: 100vh;
+  margin-left: 0vh;
+  padding: 10%;
 }
 
 /* The sidebarR menu */
 .sidenavR {
-  height: 50%; /* Full-height: remove this if you want "auto" height */
-  width: 200px; /* Set the width of the sidebar */
+  height: 50%;
+  /* Full-height: remove this if you want "auto" height */
+  width: 200px;
+  /* Set the width of the sidebar */
   margin-left: 70px;
   margin-top: 30vh;
   /* position: fixed; */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
   right: 0;
-  background-color: rgb(255, 255, 255); /* White */
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: rgb(255, 255, 255);
+  /* White */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
   padding-top: 20px;
 }
- /* The navigation menu links */
- .sidenavR a {
+
+/* The navigation menu links */
+.sidenavR a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-family: 'Roboto Slab', serif;
@@ -149,22 +171,22 @@ h1{
   display: block;
 }
 
-[type="checkbox"]{
+[type="checkbox"] {
   opacity: 0;
 }
 
-[type = "checkbox"] + label{
+[type="checkbox"]+label {
   position: relative;
   padding-left: 50px;
   cursor: pointer;
   font-family: 'Roboto Slab', serif;
   font-size: 20px;
-  font:bold;
-  color:rgb(198, 48, 48);
-  line-height: 40px;  
+  font: bold;
+  color: rgb(198, 48, 48);
+  line-height: 40px;
 }
 
-[type = "checkbox"] + label::before{
+[type="checkbox"]+label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -175,7 +197,7 @@ h1{
   background: white;
 }
 
-[type = "checkbox"]:checked + label::before{
+[type="checkbox"]:checked+label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -186,15 +208,15 @@ h1{
   background: white;
 }
 
-.flex-container{
+.flex-container {
   display: inline-flex
 }
 
-.flex-child{
+.flex-child {
   flex: 1
-} 
+}
 
-.flex-child:first-child{
+.flex-child:first-child {
 
   margin-right: 10px;
 }
