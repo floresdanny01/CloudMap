@@ -1,31 +1,55 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics"
-import { getFirestore } from "firebase/firestore";
+import { initializeapp } from "firebase/app";
+import { getanalytics } from "firebase/analytics";
+import { getfirestore } from "firebase/firestore";
+import { getAuth, connectAuthEmulator, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
-const firebaseConfig = initializeApp({
-    apiKey: "AIzaSyBgA8pY4qgEGp8ZWHb7pAHorfjWnxWr5A8",
-    authDomain: "cloud-processing-map.firebaseapp.com",
-    projectId: "cloud-processing-map",
-    storageBucket: "cloud-processing-map.appspot.com",
-    messagingSenderId: "1004802621915",
-    appId: "1:1004802621915:web:bb9d12afaf9ac53c3127fe",
-    measurementId: "G-PL8H8RBN0J"
+// initialize firebase
+const firebaseApp = initializeapp({
+    apikey: "aizasybga8py4qgegp8zwhb7pahorfjwnxwr5a8",
+    authdomain: "cloud-processing-map.firebaseapp.com",
+    projectid: "cloud-processing-map",
+    storagebucket: "cloud-processing-map.appspot.com",
+    messagingsenderid: "1004802621915",
+    appid: "1:1004802621915:web:bb9d12afaf9ac53c3127fe",
+    measurementid: "g-pl8h8rbn0j"
 });
 
-// Initialize Firebase
-const firestore = getFirestore();
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = firebase.auth()
-const db = getFirestore(app);
 
-function signUp() {
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
+const auth = getAuth.auth(firebaseApp);
+connectAuthEmulator(auth, "http://localhost:5000");
 
-    const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-    promise.catch(e => alert(e.message));
+const loginEmailPassword = async () => {
+    const loginEmail = email.value;
+    const loginPassword = password.value;
 
-    alert("Signed In")
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+        console.log(userCredential.user);
+    }
+
+    catch (error) {
+        console.log(error);
+        showLoginError(error);
+    }
 
 }
+
+btnLogin.addEventListener("click", loginEmailPassword);
+
+const createUserWithEmailAndPassword = async () => {
+    const loginEmail = email.value;
+    const loginPassword = password.value;
+
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
+        console.log(userCredential.user);
+    }
+
+    catch (error) {
+        console.log(error);
+        showLoginError(error);
+    }
+
+}
+
+btnLogin.addEventListener("click", createUserWithEmailAndPassword);
