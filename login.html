@@ -46,12 +46,69 @@
                 </p>
 
                 <ul class="actions">
-                    <button class="buttom style4" onclick="loginEmailPassword()" id="signIn"> Login </button>
+                    <button id="login"> Login </button>
                 </ul>
             </div>
         </section>
 
     </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+        import { getDatabase, update, ref } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBgA8pY4qgEGp8ZWHb7pAHorfjWnxWr5A8",
+            authDomain: "cloud-processing-map.firebaseapp.com",
+            databaseURL: "https://cloud-processing-map-default-rtdb.firebaseio.com",
+            projectId: "cloud-processing-map",
+            storageBucket: "cloud-processing-map.appspot.com",
+            messagingSenderId: "1004802621915",
+            appId: "1:1004802621915:web:bb9d12afaf9ac53c3127fe",
+            measurementId: "G-PL8H8RBN0J"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const database = getDatabase(app);
+
+        document.getElementById("login").addEventListener('click', function () {
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+
+                    const dt = new Date();
+                    update(ref(database, 'users/' + user.uid), {
+                        last_login: dt
+                    })
+
+                    // ...
+                    alert("User Signed In")
+                    console.log("Signed In");
+
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    alert(errorCode + errorMessage)
+                    console.log(errorCode + errorMessage);
+                });
+
+        })
+    </script>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -61,33 +118,10 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="script.js"></script>
-    <script src="login.js"></script>
+
 
 </body>
 
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyBgA8pY4qgEGp8ZWHb7pAHorfjWnxWr5A8",
-        authDomain: "cloud-processing-map.firebaseapp.com",
-        databaseURL: "https://cloud-processing-map-default-rtdb.firebaseio.com",
-        projectId: "cloud-processing-map",
-        storageBucket: "cloud-processing-map.appspot.com",
-        messagingSenderId: "1004802621915",
-        appId: "1:1004802621915:web:bb9d12afaf9ac53c3127fe",
-        measurementId: "G-PL8H8RBN0J"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-</script>
 
 </html>
