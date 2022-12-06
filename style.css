@@ -385,3 +385,7 @@ span {
 #nav>ul>li.active>span {
   color: #fff;
 }
+
+.inputBox {
+  width: 500px;
+}

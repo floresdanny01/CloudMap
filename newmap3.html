@@ -70,22 +70,25 @@
 										<article class="box post-excerpt">
 											<a href="#" class="image left"><img src="images/pic09.jpg" alt="" /></a>
 											<h3><a href="#">Fullerton Schools</a></h3>
-                                            <button onclick="toggleHeatmap()" class="button style3" id="toggle-heatmap">Toggle</button>
-											
+											<button onclick="toggleHeatmap()" class="button style3"
+												id="toggle-heatmap">Toggle</button>
+
 										</article>
 									</li>
 									<li>
 										<article class="box post-excerpt">
-											<a href="newmap2.html" class="image left"><img src="images/pic10.jpg" alt="" /></a>
+											<a href="newmap2.html" class="image left"><img src="images/pic10.jpg"
+													alt="" /></a>
 											<h3><a href="newmap2.html">Recent EarthQuakes</a></h3>
 											<a href="newmap2.html" class="button style3">Learn More</a>
 										</article>
 									</li>
 									<li>
 										<article class="box post-excerpt">
-											<a href="newmap.html" class="image left"><img src="images/pic08.jpg" alt="" /></a>
+											<a href="newmap.html" class="image left"><img src="images/pic08.jpg"
+													alt="" /></a>
 											<h3><a href="newmap.html">Population HeatMap</a></h3>
-                                            <a href="newmap.html" class="button style3">Learn More</a>
+											<a href="newmap.html" class="button style3">Learn More</a>
 										</article>
 									</li>
 								</ul>
@@ -115,12 +118,83 @@
 
 							</article>
 
+							<div class="container">
+
+								<h1>Comments</h1>
+								<article class="formbox">
+									<div class="alert">Leave A Message</div>
+
+									<div class="input-field">
+										<input type="text" id="name" placeholder="Your name...." />
+									</div>
+
+									<div class="input-field">
+										<input type="email" id="emailid" placeholder="Your Email....." />
+									</div>
+
+									<div class="inputBox">
+										<textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
+									</div>
+
+									<div class="inputBox">
+										<button class="submit" id="submit">Submit</button>
+									</div>
+								</article>
+
+							</div>
+
 						</div>
 
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+			import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+			import { getDatabase, update, ref, set } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+			// TODO: Add SDKs for Firebase products that you want to use
+			// https://firebase.google.com/docs/web/setup#available-libraries
+
+			// Your web app's Firebase configuration
+			// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+			const firebaseConfig = {
+				apiKey: "AIzaSyBgA8pY4qgEGp8ZWHb7pAHorfjWnxWr5A8",
+				authDomain: "cloud-processing-map.firebaseapp.com",
+				databaseURL: "https://cloud-processing-map-default-rtdb.firebaseio.com",
+				projectId: "cloud-processing-map",
+				storageBucket: "cloud-processing-map.appspot.com",
+				messagingSenderId: "1004802621915",
+				appId: "1:1004802621915:web:bb9d12afaf9ac53c3127fe",
+				measurementId: "G-PL8H8RBN0J"
+			};
+
+			// Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+			const auth = getAuth();
+			const database = getDatabase(app);
+
+			document.getElementById("submit").addEventListener('click', function () {
+
+				var name = document.getElementById('name').value;
+				var emailid = document.getElementById('emailid').value;
+				var msgContent = document.getElementById('msgContent').value;
+
+				const user = auth.currentUser;
+
+				const dt = new Date();
+				set(ref(database, 'comments/' + user.uid), {
+					name: name,
+					email: emailid,
+					msgContent: msgContent,
+					timestamp: dt
+				})
+				console.log("comments created");
+				alert("Comment Created");
+			})
+		</script>
 
 		<!-- Scripts -->
 		<script src=" assets/js/jquery.min.js"></script>
@@ -129,7 +203,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-        <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+		<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 
 </body>
 
