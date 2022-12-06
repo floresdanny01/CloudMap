@@ -70,21 +70,21 @@
 										<article class="box post-excerpt">
 											<a href="newmap3.html" class="image left"><img src="images/pic09.jpg" alt="" /></a>
 											<h3><a href="newmap3.html">Fullerton Schools</a></h3>
-											<a href="#" class="button style3">Learn More</a>
+											<a href="newmap3.html" class="button style3">Learn More</a>
 										</article>
 									</li>
 									<li>
 										<article class="box post-excerpt">
 											<a href="#" class="image left"><img src="images/pic10.jpg" alt="" /></a>
-											<h3><a href="newmap2.html">Recent EarthQuakes</a></h3>
-											<a href="newmap2.html" class="button style3">Learn More</a>
+											<h3><a href="#">Recent EarthQuakes</a></h3>
+											<button onclick="toggleHeatmap()" class="button style3" id="toggle-heatmap">Toggle</button>
 										</article>
 									</li>
 									<li>
 										<article class="box post-excerpt">
-											<a href="#" class="image left"><img src="images/pic08.jpg" alt="" /></a>
-											<h3><a href="#">Population HeatMap</a></h3>
-											<button onclick="toggleHeatmap()" class="button style3" id="toggle-heatmap">Toggle</button>
+											<a href="newmap.html" class="image left"><img src="images/pic08.jpg" alt="" /></a>
+											<h3><a href="newmap.html">Population HeatMap</a></h3>
+                                            <a href="newmap.html" class="button style3">Learn More</a>
 										</article>
 									</li>
 								</ul>
@@ -106,7 +106,7 @@
 
 								<div class="flex-container">
 									<div id="map"></div>
-									<script src="script.js"></script>
+									<script src="script2.js"></script>
 									<script
 										src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMG9q7l1xgsd2hSet3elI1qjiNB59IqK8&map_ids=40c13ed31879d9c7&libraries=places,visualization&callback=initMap"
 										async defer></script>
@@ -128,7 +128,6 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 
 </body>
 
